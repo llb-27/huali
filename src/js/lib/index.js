@@ -7,11 +7,10 @@ define(['jquery'], function($) {
                 url: `${baseUrl}/interface/getall.php`,
                 dataType: "json",
                 success: function(res) {
-                    console.log(res);
+                    // console.log(res);
                     let temp = '';
                     res.forEach(elm => {
-                        console.log(elm);
-                        // console.log(elm.picture);
+                        // console.log(elm);
                         let picture = JSON.parse(elm.picture);
                         // console.log(picture);
                         temp += `<div class="fl-products-item">

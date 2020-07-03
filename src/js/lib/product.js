@@ -13,17 +13,13 @@ define(['jquery', 'cookie'], function($, cookie) {
                 },
                 dataType: "json",
                 success: function(res) {
-                    // console.log(res);
+                    console.log(res);
                     let temp = '';
 
                     let picture = JSON.parse(res.picture);
-                    temp = `<div class="XiaoTu">
-                 
-                                <img src="${baseUrl}/src/${picture[0].src}" alt="">
-                                <div class="XiaoFang"></div>
-                            </div>
-                            <div class="DaFang">
-                                <img src="${baseUrl}/src/${picture[0].src}" alt="" class="DaTu">
+                    console.log(picture);
+                    temp = `<div class="XiaoTu">                 
+                                <img src="${baseUrl}/src/${picture[0].src}" alt="">                           
                             </div>
                             <div class="details-r">
                                 <p class="title">韩式系列/亲爱的你--粉佳人玫瑰16枝、白和粉色洋桔梗各5枝、尤加利10枝、浅紫色小菊3枝、深粉色绣球1枝</p>
@@ -65,10 +61,10 @@ define(['jquery', 'cookie'], function($, cookie) {
                                     </li>
                                 </ul>
                                 <p class="hengxian"></p>
-                                <p class="price">花礼价：${res.price}<span class="price-logo">￥<i class="price-num"></i></span></p>
+                                <p class="price">花礼价：<span class="price-logo"><i class="price-num">￥</i></span>${res.price}</p>
                            
-                                <input type="number" class="num" min="1" max="" value="1" width="20px" height="20px";>
-                           
+                                <input type="number" class="num" min="1" max="" value="1" width="20px" height="20px" border="1px";>
+                          
                                <a href="cart.html"> <button class="gocart">加入购物车</button></a>
                             </div>
                             <div class="details-bottomimg">
@@ -77,13 +73,13 @@ define(['jquery', 'cookie'], function($, cookie) {
                                 <img src="${baseUrl}/src/${picture[0].src}" alt="">
                                 <img src="${baseUrl}/src/${picture[0].src}" alt="">
                             </div>`
-
-
                     $('.details').html(temp);
+
+
+
                     callback && callback(res.id, res.price);
                 }
             });
-
         },
         addItem: function(id, price, num) {
             let shop = cookie.get('shop');
