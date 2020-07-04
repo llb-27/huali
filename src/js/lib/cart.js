@@ -44,7 +44,7 @@ define(['jquery', 'cookie'], function($, cookie) {
                             </li>
                             <li class="One-num">
                               
-                                <input type="text" value="${arr[0].num}"style="width: 40px ;" class="lastNum" id="${elm.id}">
+                                <input type="number" min="1" value="${arr[0].num}"style="width: 40px ;" class="lastNum" id="${elm.id}">
                                 
                             </li>
                             <li class="delete" id="${elm.id}">

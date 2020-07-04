@@ -68,14 +68,21 @@ define(['jquery', 'cookie'], function($, cookie) {
                                <a href="cart.html"> <button class="gocart">加入购物车</button></a>
                             </div>
                             <div class="details-bottomimg">
-                                <img src="${baseUrl}/src/${picture[0].src}" alt="" class="details-active">
-                                <img src="${baseUrl}/src/${picture[0].src}" alt="">
-                                <img src="${baseUrl}/src/${picture[0].src}" alt="">
-                                <img src="${baseUrl}/src/${picture[0].src}" alt="">
+                                <img src="${baseUrl}/src/${picture[0].src}" alt="" class="details-active" >
+                                <img src="${baseUrl}/src/${picture[1].src}" alt=""  class="">
+                                <img src="${baseUrl}/src/${picture[2].src}" alt=""   class="">
+                                <img src="${baseUrl}/src/${picture[3].src}" alt=""  class="">
                             </div>`
                     $('.details').html(temp);
+                    // console.log($('.details-bottomimg'))
 
+                    $('.details').on('mouseover', '.details-bottomimg img', function() {
 
+                        console.log(111);
+                        $(this).siblings().removeClass('details-active');
+                        $(this).addClass('details-active');
+                        $(this).parent().siblings('.XiaoTu').children('img').attr('src', $(this).attr('src'));
+                    })
 
                     callback && callback(res.id, res.price);
                 }
