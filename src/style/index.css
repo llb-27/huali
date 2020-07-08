@@ -1141,6 +1141,26 @@ header .head-nav .container .nav-right .shopcar .count {
   margin-right: 16px;
 }
 
+.information-server .icon-information3 {
+  background: url(../images/loginsprite.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-position: -100px -136px;
+  margin-right: 16px;
+}
+
+.information-server .icon-information4 {
+  background: url(../images/loginsprite.png);
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-position: -150px -136px;
+  margin-right: 16px;
+}
+
 .information_list {
   padding-top: 36px;
   padding-bottom: 40px;
