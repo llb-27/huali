@@ -77,8 +77,6 @@ define(['jquery', 'cookie'], function($, cookie) {
                     // console.log($('.details-bottomimg'))
 
                     $('.details').on('mouseover', '.details-bottomimg img', function() {
-
-                        console.log(111);
                         $(this).siblings().removeClass('details-active');
                         $(this).addClass('details-active');
                         $(this).parent().siblings('.XiaoTu').children('img').attr('src', $(this).attr('src'));

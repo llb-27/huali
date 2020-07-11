@@ -24,7 +24,7 @@ define(['jquery', 'cookie'], function($, cookie) {
                             // cookie中获取 于当前从数据库中遍历出的相同元素
                             let arr = shop.filter(val => val.id == elm.id);
 
-                            // console.log(arr);
+                            console.log(arr);
 
                             tempstr += `<ul class="OneData">
                             
@@ -59,6 +59,7 @@ define(['jquery', 'cookie'], function($, cookie) {
                             let that = this;
                             let shop1 = [];
                             let flag = confirm('是否删除');
+
                             if (flag) {
                                 shop.forEach(function(elm) {
                                     if (elm.id != that.id) {
@@ -70,13 +71,16 @@ define(['jquery', 'cookie'], function($, cookie) {
                                 shop1 = JSON.stringify(shop1);
                                 // console.log(shop1);
                                 cookie.set('shop', shop1, 1);
-                                location.reload();
+                                //删除dom元素
+                                $(this).parents('.OneData').remove();
+
+                                // location.reload();
                             }
                         });
 
                         $('.shopcart-body').on('input', '.lastNum', function() {
                             // console.log(this.value);
-                            console.log(this.id);
+                            // console.log(this.id);
                             // console.log(1);
                             console.log($(this).parent().siblings('.check')[0].checked);
                             let that = this;
@@ -104,7 +108,7 @@ define(['jquery', 'cookie'], function($, cookie) {
 
 
                         $('.shopcart-body').on('click', '.check', function() {
-                            console.log(this.checked);
+                            // console.log(this.checked);
                             let _price = (+$('.account-num').html());
                             if (this.checked) {
                                 let _priceSum = (+$(this).siblings('.One-price').children('p').html().slice(1));
@@ -115,7 +119,6 @@ define(['jquery', 'cookie'], function($, cookie) {
                                 _priceSum = _price - _priceSum;
                                 $('.account-num').html(_priceSum);
                             }
-
 
                             // let sum = 0;
                             // sum += arr[0].num * elm.price

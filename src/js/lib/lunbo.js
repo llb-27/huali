@@ -1,5 +1,4 @@
 ! function($) {
-
     const imgbox = $(".banner_content")
     const img = $(".banner_content .item")
     const btn = $(".banner_list li")
